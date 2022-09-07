@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>FCC: Survey Form</title>
+</head>
+<body>
+    <header class="sets">
+        <h1 id="title">Hogwarts Student Form</h1>
+        <p id="description">Brief questionnaire.<br>If you're ready, let's begin...</p>
+        <button class="nxt-btns">
+            <a href="#set-o1">Start</a>
+        </button>
+    </header>
+
+    <form id="survey-form">
+        <!-- SET ONE -->
+        <fieldset id="set-o1" class="sets">
+            <label for="name" id="name-label">
+                Full Name: <input type="text" id="name" placeholder="Harry Potter" required />
+            </label>
+            <label for="email" id="email-label">
+                Email: <input type="email" id="email" name="email" placeholder="harrypotter@hogwarts.com" required />
+            </label>
+            <label for="age" id="number-label">
+                Age: <input type="number" id="number" name="age" min="10" max="120" placeholder="11" />
+            </label>
+            <button class="nxt-btns">
+                <a href="#set-o2">Next</a>
+            </button>
+        </fieldset>
+
+        <!-- SET TWO -->
+        <fieldset id="set-o2" class="sets">
+            <div class="dropdown-select">
+                <label for="houses">Which house are you in?</label>
+                <select name="houses" id="dropdown">
+                    <option value="" class="house o1">(select one)</option>
+                    <option value="Gryffindor" class="house o2">Gryffindor</option>
+                    <option value="Slytherin" class="house o3">Slytherin</option>
+                    <option value="Ravenclaw" class="house o4">Ravenclaw</option>
+                    <option value="Hufflepuff" class="house o5">Hufflepuff</option>
+                </select>
+            </div>
+            <div class="radio-btns">
+                <label for="year">Are you a first year?</label>
+                <label for="radio-1">
+                    <input type="radio" name="year" id="radio-1" value="Yes" /> Yes
+                </label>
+                <label for="radio-2">
+                    <input type="radio" name="year" id="radio-2" value="No" /> No
+                </label>
+                <button class="nxt-btns">
+                    <a href="#set-o3">Next</a>
+                </button>
+            </div>
+        </fieldset>
+
+        <!-- SET THREE -->
+        <fieldset class="courses sets" id="set-o3">
+            <p class="prompt">Which course(s) are you taking?</p>
+            <label for="course-o1">
+                <input type="checkbox" name="course-o1" id="course-o1" value="Astronomy" /> Astronomy
+            </label>
+            <label for="course-o2">
+                <input type="checkbox" name="course-o2" id="course-o2" value="Charms" /> Charms
+            </label>
+            <label for="course-o3">
+                <input type="checkbox" name="course-o3" id="course-o3" value="Defense Against the Dark Arts" /> Defense Against the Dark Arts
+            </label>
+            <label for="course-o4">
+                <input type="checkbox" name="course-o4" id="course-o4" value="Herbology" /> Herbology
+            </label>
+            <label for="course-o5">
+                <input type="checkbox" name="course-o5" id="course-o5" value="History of Magic" /> History of Magic
+            </label>
+            <label for="course-o6">
+                <input type="checkbox" name="course-o6" id="course-o6" value="Potions" /> Potions
+            </label>
+            <label for="course-o7">
+                <input type="checkbox" name="course-07" id="course-o7" value="Transfiguration" /> Transfiguration
+            </label>
+            <button class="nxt-btns">
+                <a href="#set-o4">Next</a>
+            </button>
+        </fieldset>
+
+        <!-- SET FOUR -->
+        <fieldset id="set-o4" class="sets">
+            <p class="p-o4">Additional Comments (optional)</p>
+            <label for="comment">
+                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Mischief Managed"></textarea>
+            </label>
+            <input type="submit" id="submit" name="submit" class="nxt-btns" onclick="postSub()" />
+            <p id="demo"></p>
+        </fieldset>
+    </form>
+</body>
+<script>
+    function postSub() {
+        document.getElementById('demo').innerHTML = 'The form has been submitted!';
+    }
+</script>
+</html>
